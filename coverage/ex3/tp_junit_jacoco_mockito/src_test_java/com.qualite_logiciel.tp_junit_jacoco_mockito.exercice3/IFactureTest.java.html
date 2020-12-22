@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>IFactureTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (Dec 22, 2020 11:54:36 PM)</a> &gt; <a href="../../index.html" class="el_group">tp_junit_jacoco_mockito</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">com.qualite_logiciel.tp_junit_jacoco_mockito.exercice3</a> &gt; <span class="el_source">IFactureTest.java</span></div><h1>IFactureTest.java</h1><pre class="source lang-java linenums">package com.qualite_logiciel.tp_junit_jacoco_mockito.exercice3;
+import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+<span class="fc" id="L10">public class IFactureTest {</span>
+	
+
+	@Test public void testGetMontantFacture() {
+		
+<span class="fc" id="L15">		IFacture facture = mock(IFacture.class); </span>
+<span class="fc" id="L16">		when(facture.getMontantFacture()).thenReturn((double)750);</span>
+		
+//		assertEquals(, 750);
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">		assertTrue(Math.abs(facture.getMontantFacture() - 750 ) &lt; 0.0001); </span>
+<span class="fc" id="L20">	}</span>
+	
+	@Test
+	public void testGetFraisTransport_ls_600() { 
+		// Test 1 - DT : { montant = 30 } , prediction de l'oracle : 45
+		
+<span class="fc" id="L26">		IFacture facture = mock(IFacture.class);</span>
+<span class="fc" id="L27">		when(facture.getFraisTransport(30)).thenReturn((double)45); </span>
+		
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">		assertTrue(Math.abs(facture.getFraisTransport(30) - 45) &lt; 0.0001);</span>
+<span class="fc" id="L30">	}</span>
+	
+	
+	@Test
+	public void testGetFraisTransport_gt_600() {
+		//Test 2 - Dt : { montant = 650 } , prediction de l'oracle : 0) 
+		
+		
+<span class="fc" id="L38">		IFacture facture = mock(IFacture.class);</span>
+<span class="fc" id="L39">		when(facture.getFraisTransport(30)).thenReturn((double)45); </span>
+		
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">		assertTrue(Math.abs(facture.getFraisTransport(650) - 0) &lt; 0.0001);</span>
+<span class="fc" id="L42">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>AllTests (Dec 22, 2020 11:54:36 PM)</div></body></html>

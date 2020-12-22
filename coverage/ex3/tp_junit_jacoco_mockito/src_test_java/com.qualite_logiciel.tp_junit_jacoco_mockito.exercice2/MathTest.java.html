@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>MathTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (Dec 22, 2020 11:54:36 PM)</a> &gt; <a href="../../index.html" class="el_group">tp_junit_jacoco_mockito</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">com.qualite_logiciel.tp_junit_jacoco_mockito.exercice2</a> &gt; <span class="el_source">MathTest.java</span></div><h1>MathTest.java</h1><pre class="source lang-java linenums">package com.qualite_logiciel.tp_junit_jacoco_mockito.exercice2;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+/**
+ * Coverage de ce test est a  100% pour le package d'exercice 2 
+ * @author medkhalil
+ *
+ */
+<span class="fc" id="L12">public class MathTest {</span>
+
+	
+	@Test
+	public void testPpcm_when_a_equals_b() {
+		
+		//Test 1 - DT : { a = 5, b = 5 }, prediction de l'oracle : 5
+		
+<span class="fc" id="L20">		assertEquals(Math.pccm(5, 5), 5);</span>
+<span class="fc" id="L21">	}</span>
+	
+	@Test
+	public void testPpcm_when_a_lt_b() { 
+		//Test 1 - DT : { a = 2 , b = 6 }, prediction de l'oracle : 2  
+		
+<span class="fc" id="L27">		int result = Math.pccm(2, 6);</span>
+		
+<span class="fc" id="L29">		assertEquals(result , 2);</span>
+
+<span class="fc" id="L31">	}</span>
+	
+	@Test public void testPpcm_when_a_gt_b() {
+		// Test 1 - DT : { a = 25, b = 5 } , prediction de l'orcale : 5
+		
+<span class="fc" id="L36">		assertEquals(Math.pccm(25, 5), 5);</span>
+
+<span class="fc" id="L38">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>AllTests (Dec 22, 2020 11:54:36 PM)</div></body></html>
